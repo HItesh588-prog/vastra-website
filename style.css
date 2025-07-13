@@ -1,0 +1,208 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdfaf7;
+  color: #3c2a1e;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background-color: #fff3e6;
+  padding: 40px 20px;
+  border-bottom: 1px solid #e0d0c0;
+}
+
+.logo {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 10px 0;
+  font-family: 'Georgia', serif;
+}
+
+p {
+  font-size: px;
+  margin: 5px 0;
+}
+
+.welcome {
+  padding: 40px 20px;
+}
+.gallery {
+  padding: 40px 20px;
+  background-color: #fff8f0;
+}
+
+.gallery h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.gallery-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.contact {
+  background-color: #fdf5ed;
+  padding: 40px 20px;
+}
+
+.contact h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.contact p {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info a {
+  color: #a0522d;
+  text-decoration: none;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+figure {
+  text-align: center;
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555;
+}
+.gallery-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+.cart {
+  background-color: #fff0e5;
+  padding: 20px;
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+}
+
+.cart h2 {
+  margin-bottom: 10px;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  padding: 6px 0;
+  font-size: 16px;
+}
+.cart button {
+  margin-left: 10px;
+  padding: 3px 8px;
+  background-color: #ff6347;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cart button:hover {
+  background-color: #e5533d;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 180px;
+  }
+  .brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  p {
+    font-size: 14px;
+  }
+  nav {
+    text-align: center;
+  }
+  nav ul {
+    gap: 10px;
+  }
+  .gallery-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .cart ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cart li {
+    font-size: 14px;
+  }
+  .contact p {
+    font-size: 14px;
+  }
+}

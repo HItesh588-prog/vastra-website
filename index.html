@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vāštra - Custom stitched t-shirts and lowers in Udaipur. Tailored comfort for every body.">
+  <title>Vāštra | Custom Tailoring | Udaipur</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .navbar {
+      background-color: #fff8e1;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      border-bottom: 1px solid #ddd0b5;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #6a4e34;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .navbar a:hover {
+      color: #a0522d;
+    }
+    footer {
+      background-color: #f5e4d6;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #6a4e34;
+      border-top: 1px solid #e4d2c5;
+      margin-top: 40px;
+    }
+    .testimonials {
+      background-color: #fff3e0;
+      padding: 30px 20px;
+      text-align: center;
+      color: #6a4e34;
+    }
+    .testimonials h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    .testimonial-item {
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      margin-top: 5px;
+      font-weight: bold;
+      font-size: 14px;
+      color: #a0522d;
+    }
+    .faq {
+      background-color: #f9f6f2;
+      padding: 30px 20px;
+      color: #6a4e34;
+    }
+    .faq h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+      text-align: center;
+    }
+    .faq-item {
+      margin-bottom: 15px;
+    }
+    .faq-question {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .faq-answer {
+      margin-left: 15px;
+    }
+    .pricing {
+      background-color: #fff8e1;
+      padding: 30px 20px;
+      color: #6a4e34;
+      text-align: center;
+    }
+    .pricing h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    .pricing-table {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .pricing-plan {
+      background-color: #f5e4d6;
+      border: 1px solid #e4d2c5;
+      padding: 20px;
+      border-radius: 8px;
+      width: 200px;
+    }
+    .pricing-plan h3 {
+      margin-bottom: 10px;
+      color: #a0522d;
+    }
+    .pricing-plan p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    .pricing-plan .price {
+      font-weight: bold;
+      font-size: 20px;
+      color: #6a4e34;
+    }
+    .size-chart-combined {
+      background-color: #fff3e0;
+      padding: 30px 20px;
+      color: #6a4e34;
+      text-align: center;
+      max-width: 800px;
+      margin: 40px auto;
+      border-radius: 8px;
+      border: 1px solid #e4d2c5;
+    }
+    .size-chart-combined h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      font-weight: bold;
+      color: #a0522d;
+    }
+    .size-chart-combined h3 {
+      font-size: 24px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #6a4e34;
+    }
+    .size-chart-combined table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    .size-chart-combined th, .size-chart-combined td {
+      border: 1px solid #e4d2c5;
+      padding: 10px;
+      font-size: 16px;
+      color: #6a4e34;
+    }
+    .size-chart-combined th {
+      background-color: #f5e4d6;
+    }
+    .size-chart-combined p {
+      font-style: italic;
+      font-size: 14px;
+      color: #a0522d;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo-removebg-preview.png" alt="Vāštra Logo" class="logo">
+    <h1>VĀŠTRA</h1>
+    <p>Tailored Comfort. Perfect Fit. </p>
+  </header>
+
+  <nav class="navbar">
+    <a href="#welcome">Home</a>
+    <a href="#gallery">Our Work</a>
+    <a href="#contact">Contact</a>
+    <a href="#cart">Cart</a>
+  </nav>
+
+  <main>
+    <section class="welcome" id="welcome">
+      <h2>Welcome to Vāštra</h2>
+      <p>
+        Vāštra is a custom tailoring brand built with years of dedication. We create made-to-measure
+        t-shirts and lowers that fit perfectly and feel comfortable — crafted locally with care.
+      </p>
+    </section>
+  </main>
+  <section class="gallery" id="gallery">
+  <h2>Our Work</h2>
+  <div class="gallery-grid">
+    <figure>
+      <img src="https://hamercop.com/cdn/shop/files/31-1988_800x.jpg?v=1750841171" alt="T-Shirt Design">
+      <figcaption>Classic White T-Shirt Design</figcaption>
+      <button onclick="addToCart('Classic White T-Shirt Design', 499)">Add to Cart</button>
+    </figure>
+    <figure>
+      <img src="https://m.media-amazon.com/images/I/51LxAumktrL._UY1000_.jpg" alt="Lower Design">
+      <figcaption>Premium Black Lower</figcaption>
+      <button onclick="addToCart('Premium Black Lower', 799)">Add to Cart</button>
+    </figure>
+    <figure>
+      <img src="https://hamercop.com/cdn/shop/files/23-1844_800x.jpg?v=1750841240" alt="Custom T-Shirt">
+      <figcaption>Custom Fit T-Shirt</figcaption>
+      <button onclick="addToCart('Custom Fit T-Shirt', 499)">Add to Cart</button>
+    </figure>
+    <figure>
+      <img src="https://www.bombayshirts.com/cdn/shop/files/1_a05df2a9-0e50-4d5e-a03c-1fc279ecb490_800x.jpg?v=1715342255" alt="Tailored Lower">
+      <figcaption>Tailored Brown Lower</figcaption>
+      <button onclick="addToCart('Tailored Brown Lower', 799)">Add to Cart</button>
+    </figure>
+    <!-- Add more images here with descriptions -->
+  </div>
+</section>
+<section class="size-chart-combined" id="size-chart-combined">
+  <h2>Size Chart</h2>
+  <h3>T-Shirt Sizes (in inches)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Size</th>
+        <th>Chest</th>
+        <th>Waist</th>
+        <th>Length</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>S</td>
+        <td>36</td>
+        <td>30</td>
+        <td>26</td>
+      </tr>
+      <tr>
+        <td>M</td>
+        <td>38</td>
+        <td>32</td>
+        <td>27</td>
+      </tr>
+      <tr>
+        <td>L</td>
+        <td>40</td>
+        <td>34</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>XL</td>
+        <td>42</td>
+        <td>36</td>
+        <td>29</td>
+      </tr>
+      <tr>
+        <td>XXL</td>
+        <td>44</td>
+        <td>38</td>
+        <td>30</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>We also support custom sizes to ensure the perfect fit for you.</p>
+  <h3>Lower Sizes (in inches)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Size</th>
+        <th>Waist</th>
+        <th>Hip</th>
+        <th>Length</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>S</td>
+        <td>30</td>
+        <td>38</td>
+        <td>40</td>
+      </tr>
+      <tr>
+        <td>M</td>
+        <td>32</td>
+        <td>40</td>
+        <td>41</td>
+      </tr>
+      <tr>
+        <td>L</td>
+        <td>34</td>
+        <td>42</td>
+        <td>42</td>
+      </tr>
+      <tr>
+        <td>XL</td>
+        <td>36</td>
+        <td>44</td>
+        <td>43</td>
+      </tr>
+      <tr>
+        <td>XXL</td>
+        <td>38</td>
+        <td>46</td>
+        <td>44</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Custom lower sizes are available upon request for your comfort.</p>
+</section>
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>We’d love to hear from you. Order, inquire, or visit us!</p>
+
+  <div class="contact-info">
+    <p><strong>📞 Phone:</strong> +91 9950758533</p>
+    <p><strong>📍 Location:</strong> Udaipur, Rajasthan</p>
+    <p><strong>📸 Instagram:</strong> <a href="https://instagram.com/vastra_tailors" target="_blank">@vastra_tailors</a></p>
+    
+    <a class="whatsapp-button" href="https://wa.me/918107419569" target="_blank">
+      Chat on WhatsApp
+    </a>
+  </div>
+</section>
+<section class="cart" id="cart">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+
+  <a id="whatsapp-link" href="#" target="_blank" class="whatsapp-button">
+    Send Order via WhatsApp
+  </a>
+</section>
+<section class="testimonials" id="testimonials">
+  <h2>Testimonials</h2>
+  <div class="testimonial-item">
+    <p>"The fit and quality are unmatched. Vāštra truly understands custom tailoring."</p>
+    <div class="testimonial-author">- Priya S.</div>
+  </div>
+  <div class="testimonial-item">
+    <p>"Excellent craftsmanship and timely delivery. Highly recommended!"</p>
+    <div class="testimonial-author">- Rajesh K.</div>
+  </div>
+  <div class="testimonial-item">
+    <p>"Comfortable and stylish, the perfect combination for my daily wear."</p>
+    <div class="testimonial-author">- Anjali M.</div>
+  </div>
+</section>
+<section class="faq" id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <div class="faq-question">How do I place a custom order?</div>
+    <div class="faq-answer">You can add items to your cart and send the order via WhatsApp, or contact us directly.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">What is the turnaround time?</div>
+    <div class="faq-answer">Typically, orders are completed within 7-10 business days.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question">Do you offer alterations?</div>
+    <div class="faq-answer">Yes, we provide alteration services to ensure the perfect fit.</div>
+  </div>
+</section>
+<section class="pricing" id="pricing">
+  <h2>Pricing</h2>
+  <div class="pricing-table">
+    <div class="pricing-plan">
+      <h3>Basic T-Shirt</h3>
+      <p>Custom stitched, premium fabric.</p>
+      <div class="price">₹499</div>
+    </div>
+    <div class="pricing-plan">
+      <h3>Premium Lower</h3>
+      <p>Tailored fit with durable material.</p>
+      <div class="price">₹799</div>
+    </div>
+    <div class="pricing-plan">
+      <h3>Custom Set</h3>
+      <p>T-Shirt + Lower combo at a special price.</p>
+      <div class="price">₹1199</div>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>© 2025 Vāštra. All rights reserved.</p>
+</footer>
+<script>
+  const cart = {};
+
+  function addToCart(item, price) {
+    if (cart[item]) {
+      cart[item].quantity += 1;
+    } else {
+      cart[item] = { quantity: 1, price: price };
+    }
+    updateCartDisplay();
+  }
+
+  function removeFromCart(item) {
+    if (cart[item]) {
+      cart[item].quantity -= 1;
+      if (cart[item].quantity <= 0) {
+        delete cart[item];
+      }
+      updateCartDisplay();
+    }
+  }
+
+  function updateCartDisplay() {
+    const cartList = document.getElementById("cart-items");
+    cartList.innerHTML = "";
+    let totalAmount = 0;
+
+    for (let item in cart) {
+      const quantity = cart[item].quantity;
+      const price = cart[item].price;
+      const itemTotal = quantity * price;
+      totalAmount += itemTotal;
+
+      const li = document.createElement("li");
+      li.innerHTML = `
+        ${item} x${quantity} = ₹${itemTotal}
+        <button onclick="removeFromCart('${item}')">Remove</button>
+      `;
+      cartList.appendChild(li);
+    }
+
+    const totalLine = document.createElement("li");
+    totalLine.style.fontWeight = "bold";
+    totalLine.textContent = `Total Amount: ₹${totalAmount}`;
+    cartList.appendChild(totalLine);
+
+    // Update WhatsApp button
+    const whatsappBtn = document.getElementById("whatsapp-link");
+    const message = Object.entries(cart).map(([name, data]) => {
+      const { quantity, price } = data;
+      return `${name} x${quantity} = ₹${quantity * price}`;
+    }).join('%0A') + `%0A%0ATotal: ₹${totalAmount}`;
+
+    whatsappBtn.href = "https://wa.me/918107419569?text=Hello%2C%20I%20want%20to%20order:%0A" + message;
+  }
+</script>
+</body>
+</html>
