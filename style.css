@@ -1,100 +1,155 @@
 body {
+  --primary-color: #a0522d;
+  --accent-color: #25D366;
+  --background-color: #fdfaf7;
+  --header-gradient: linear-gradient(90deg, #fff3e6, #fcebd6);
+  --card-background: #fff8f0;
+  --shadow-color: rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
-  background-color: #fdfaf7;
+  background-color: var(--background-color);
   color: #3c2a1e;
   margin: 0;
   padding: 0;
   text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
-  background-color: #fff3e6;
-  padding: 40px 20px;
-  border-bottom: 1px solid #e0d0c0;
+  background: var(--header-gradient);
+  padding: 50px 30px;
+  border-radius: 0 0 20px 20px;
+  border-bottom: none;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: box-shadow 0.3s ease;
 }
 
 .logo {
   width: 300px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px var(--shadow-color);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-5px);
 }
 
 h1 {
-  font-size: 36px;
-  margin: 10px 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 15px 0;
   font-family: 'Georgia', serif;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
 }
 
 p {
-  font-size: px;
-  margin: 5px 0;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  margin: 8px 0;
+  line-height: 1.5;
+  color: #5a4328;
 }
 
 .welcome {
-  padding: 40px 20px;
+  padding: 50px 30px;
 }
+
 .gallery {
-  padding: 40px 20px;
-  background-color: #fff8f0;
+  padding: 50px 30px;
+  background-color: var(--card-background);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px var(--shadow-color);
+  transition: box-shadow 0.3s ease;
 }
 
 .gallery h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 .gallery-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 15px;
 }
 
 .gallery-grid img {
-  width: 250px;
+  width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px var(--shadow-color);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
 }
+
+.gallery-grid img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
 .contact {
   background-color: #fdf5ed;
-  padding: 40px 20px;
+  padding: 50px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px var(--shadow-color);
 }
 
 .contact h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 .contact p {
-  font-size: 16px;
-  margin: 8px 0;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  margin: 10px 0;
+  color: #5a4328;
 }
 
 .contact-info {
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .contact-info a {
-  color: #a0522d;
+  color: var(--primary-color);
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--accent-color);
 }
 
 .whatsapp-button {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #25D366;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background-color: var(--accent-color);
   color: white;
-  border-radius: 5px;
+  border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-  transition: background 0.3s;
+  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .whatsapp-button:hover {
   background-color: #1ebe5d;
+  box-shadow: 0 10px 25px rgba(30, 190, 93, 0.6);
 }
+
 figure {
   text-align: center;
   margin: 0;
@@ -105,28 +160,21 @@ figcaption {
   font-size: 14px;
   color: #555;
 }
-.gallery-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 10px;
-}
 
-.gallery-grid img {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-}
 .cart {
   background-color: #fff0e5;
-  padding: 20px;
-  margin-top: 30px;
-  border-top: 1px solid #ddd;
+  padding: 30px 25px;
+  margin-top: 40px;
+  border-radius: 20px;
+  border-top: none;
+  box-shadow: 0 8px 20px var(--shadow-color);
+  transition: box-shadow 0.3s ease;
 }
 
 .cart h2 {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 .cart ul {
@@ -135,38 +183,29 @@ figcaption {
 }
 
 .cart li {
-  padding: 6px 0;
-  font-size: 16px;
+  padding: 8px 0;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
+
 .cart button {
-  margin-left: 10px;
-  padding: 3px 8px;
+  padding: 6px 12px;
   background-color: #ff6347;
   border: none;
   color: white;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cart button:hover {
   background-color: #e5533d;
-}
-
-.whatsapp-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #25D366;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.whatsapp-button:hover {
-  background-color: #1ebe5d;
+  transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -179,10 +218,10 @@ figcaption {
     align-items: center;
   }
   h1 {
-    font-size: 28px;
+    font-size: clamp(1.5rem, 4vw, 2rem);
   }
   p {
-    font-size: 14px;
+    font-size: clamp(0.8rem, 2vw, 1rem);
   }
   nav {
     text-align: center;
@@ -190,19 +229,15 @@ figcaption {
   nav ul {
     gap: 10px;
   }
-  .gallery-grid {
-    flex-direction: column;
-    gap: 15px;
-  }
   .cart ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
   .cart li {
-    font-size: 14px;
+    font-size: clamp(0.8rem, 2vw, 1rem);
   }
   .contact p {
-    font-size: 14px;
+    font-size: clamp(0.8rem, 2vw, 1rem);
   }
 }

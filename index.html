@@ -7,6 +7,21 @@
   <title>Vāštra | Custom Tailoring | Udaipur</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* Fade-in animation for scroll-based section reveal */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeInUp 1s cubic-bezier(0.22, 0.68, 0.4, 1.01) forwards;
+    }
     html {
       scroll-behavior: smooth;
     }
@@ -154,14 +169,73 @@
       color: #a0522d;
       margin-bottom: 20px;
     }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: #fff3e0;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      color: #6a4e34;
+      font-family: Arial, sans-serif;
+    }
+    .modal-content h3 {
+      margin-top: 0;
+      color: #a0522d;
+    }
+    .modal-content label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    .modal-content select, .modal-content input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #e4d2c5;
+      border-radius: 4px;
+      font-size: 16px;
+      color: #6a4e34;
+    }
+    .modal-buttons {
+      text-align: right;
+    }
+    .modal-buttons button {
+      background-color: #a0522d;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      margin-left: 10px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .modal-buttons button:hover {
+      background-color: #6a4e34;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo-removebg-preview.png" alt="Vāštra Logo" class="logo">
-    <h1>VĀŠTRA</h1>
-    <p>Tailored Comfort. Perfect Fit. </p>
+    <div class="brand-header">
+      <img src="logo-removebg-preview.png" alt="Vāštra Logo" class="logo">
+      <div class="brand-text">
+        <h1>VĀŠTRA</h1>
+        <p>Tailored Comfort. Perfect Fit.</p>
+      </div>
+    </div>
   </header>
 
   <nav class="navbar">
@@ -181,31 +255,54 @@
     </section>
   </main>
   <section class="gallery" id="gallery">
-  <h2>Our Work</h2>
-  <div class="gallery-grid">
-    <figure>
-      <img src="https://hamercop.com/cdn/shop/files/31-1988_800x.jpg?v=1750841171" alt="T-Shirt Design">
-      <figcaption>Classic White T-Shirt Design</figcaption>
-      <button onclick="addToCart('Classic White T-Shirt Design', 499)">Add to Cart</button>
-    </figure>
-    <figure>
-      <img src="https://m.media-amazon.com/images/I/51LxAumktrL._UY1000_.jpg" alt="Lower Design">
-      <figcaption>Premium Black Lower</figcaption>
-      <button onclick="addToCart('Premium Black Lower', 799)">Add to Cart</button>
-    </figure>
-    <figure>
-      <img src="https://hamercop.com/cdn/shop/files/23-1844_800x.jpg?v=1750841240" alt="Custom T-Shirt">
-      <figcaption>Custom Fit T-Shirt</figcaption>
-      <button onclick="addToCart('Custom Fit T-Shirt', 499)">Add to Cart</button>
-    </figure>
-    <figure>
-      <img src="https://www.bombayshirts.com/cdn/shop/files/1_a05df2a9-0e50-4d5e-a03c-1fc279ecb490_800x.jpg?v=1715342255" alt="Tailored Lower">
-      <figcaption>Tailored Brown Lower</figcaption>
-      <button onclick="addToCart('Tailored Brown Lower', 799)">Add to Cart</button>
-    </figure>
+    <h2>Our Work</h2>
+    <h3>T-Shirts</h3>
+    <div class="gallery-grid">
+      <figure>
+        <img src="https://hamercop.com/cdn/shop/files/31-1988_800x.jpg?v=1750841171" alt="T-Shirt Design">
+        <figcaption>Classic White T-Shirt Design</figcaption>
+        <button onclick="openSizeModal('Classic White T-Shirt Design', 499, 'T-Shirt')">Add to Cart</button>
+      </figure>
+      <figure>
+        <img src="https://hamercop.com/cdn/shop/files/23-1844_800x.jpg?v=1750841240" alt="Custom T-Shirt">
+        <figcaption>Custom Fit T-Shirt</figcaption>
+        <button onclick="openSizeModal('Custom Fit T-Shirt', 499, 'T-Shirt')">Add to Cart</button>
+      </figure>
+    </div>
+    <h3>Lowers</h3>
+    <div class="gallery-grid">
+      <figure>
+        <img src="https://m.media-amazon.com/images/I/51LxAumktrL._UY1000_.jpg" alt="Lower Design">
+        <figcaption>Premium Black Lower</figcaption>
+        <button onclick="openSizeModal('Premium Black Lower', 799, 'Lower')">Add to Cart</button>
+      </figure>
+      <figure>
+        <img src="https://www.bombayshirts.com/cdn/shop/files/1_a05df2a9-0e50-4d5e-a03c-1fc279ecb490_800x.jpg?v=1715342255" alt="Tailored Lower">
+        <figcaption>Tailored Brown Lower</figcaption>
+        <button onclick="openSizeModal('Tailored Brown Lower', 799, 'Lower')">Add to Cart</button>
+      </figure>
+    </div>
     <!-- Add more images here with descriptions -->
+  </section>
+
+  <!-- Modal Popup for Size Selection -->
+  <div id="sizeModal" class="modal">
+    <div class="modal-content">
+      <h3>Select Size</h3>
+      <p id="modal-item-name" style="font-weight:bold; margin-bottom: 10px;"></p>
+      <label for="sizeSelect">Choose a size:</label>
+      <select id="sizeSelect">
+        <!-- options will be populated dynamically -->
+      </select>
+      <label for="customSizeInput">Or enter custom size details:</label>
+      <input type="text" id="customSizeInput" placeholder="E.g., Chest: 39, Waist: 33" />
+      <div class="modal-buttons">
+        <button onclick="closeSizeModal()">Cancel</button>
+        <button onclick="confirmSizeSelection()">Add to Cart</button>
+      </div>
+    </div>
   </div>
-</section>
+
 <section class="size-chart-combined" id="size-chart-combined">
   <h2>Size Chart</h2>
   <h3>T-Shirt Sizes (in inches)</h3>
@@ -373,15 +470,129 @@
   <p>© 2025 Vāštra. All rights reserved.</p>
 </footer>
 <script>
-  const cart = {};
+  // === Scroll-based section animation ===
+  // List of key sections to animate
+  const animatedSections = [
+    '.gallery',
+    '.pricing',
+    '.testimonials',
+    '.faq',
+    '.contact',
+    '.cart'
+  ];
 
-  function addToCart(item, price) {
-    if (cart[item]) {
-      cart[item].quantity += 1;
-    } else {
-      cart[item] = { quantity: 1, price: price };
+  // Add fade-in class initially (hidden, will animate in)
+  animatedSections.forEach(selector => {
+    const section = document.querySelector(selector);
+    if (section) {
+      section.classList.add('fade-in');
     }
+  });
+
+  // IntersectionObserver callback to trigger animation
+  const observer = new window.IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in-animate');
+        // Remove observer after animation triggers
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  // We use a helper class to only trigger animation once
+  document.addEventListener('DOMContentLoaded', function() {
+    animatedSections.forEach(selector => {
+      const section = document.querySelector(selector);
+      if (section) {
+        // Use a helper class to start animation
+        observer.observe(section);
+      }
+    });
+  });
+
+  // Add CSS for .fade-in-animate to trigger the fade-in animation
+  // (This is needed to avoid retriggering animation if class is toggled)
+  (function addFadeInAnimateStyle() {
+    const style = document.createElement('style');
+    style.innerHTML = `
+      .fade-in.fade-in-animate {
+        opacity: 1 !important;
+        animation-play-state: running !important;
+      }
+      .fade-in:not(.fade-in-animate) {
+        opacity: 0 !important;
+        animation-play-state: paused !important;
+      }
+    `;
+    document.head.appendChild(style);
+  })();
+  const cart = {};
+  let currentItemName = '';
+  let currentItemPrice = 0;
+  let currentItemCategory = '';
+
+  function openSizeModal(item, price, category) {
+    currentItemName = item;
+    currentItemPrice = price;
+    currentItemCategory = category;
+    document.getElementById('modal-item-name').textContent = item;
+    const sizeSelect = document.getElementById('sizeSelect');
+    const customSizeInput = document.getElementById('customSizeInput');
+    customSizeInput.value = '';
+
+    // Clear previous options
+    sizeSelect.innerHTML = '';
+
+    // Populate sizes depending on category
+    let sizes = [];
+    if (category === 'T-Shirt') {
+      sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+    } else if (category === 'Lower') {
+      sizes = ['S', 'M', 'L', 'XL', 'XXL'];
+    }
+
+    sizes.forEach(size => {
+      const option = document.createElement('option');
+      option.value = size;
+      option.textContent = size;
+      sizeSelect.appendChild(option);
+    });
+
+    // Show modal
+    document.getElementById('sizeModal').style.display = 'block';
+  }
+
+  function closeSizeModal() {
+    document.getElementById('sizeModal').style.display = 'none';
+  }
+
+  function confirmSizeSelection() {
+    const sizeSelect = document.getElementById('sizeSelect');
+    const customSizeInput = document.getElementById('customSizeInput');
+    let selectedSize = customSizeInput.value.trim();
+    if (!selectedSize) {
+      selectedSize = sizeSelect.value;
+    }
+
+    if (!selectedSize) {
+      alert('Please select or enter a size.');
+      return;
+    }
+
+    // Create unique key for cart item including size info
+    const cartKey = `${currentItemName} (${selectedSize})`;
+
+    if (cart[cartKey]) {
+      cart[cartKey].quantity += 1;
+    } else {
+      cart[cartKey] = { quantity: 1, price: currentItemPrice, size: selectedSize };
+    }
+
     updateCartDisplay();
+    closeSizeModal();
   }
 
   function removeFromCart(item) {
@@ -402,6 +613,7 @@
     for (let item in cart) {
       const quantity = cart[item].quantity;
       const price = cart[item].price;
+      const size = cart[item].size || '';
       const itemTotal = quantity * price;
       totalAmount += itemTotal;
 
@@ -413,20 +625,65 @@
       cartList.appendChild(li);
     }
 
-    const totalLine = document.createElement("li");
-    totalLine.style.fontWeight = "bold";
-    totalLine.textContent = `Total Amount: ₹${totalAmount}`;
-    cartList.appendChild(totalLine);
+    if (Object.keys(cart).length === 0) {
+      const emptyLi = document.createElement("li");
+      emptyLi.textContent = "Your cart is empty.";
+      cartList.appendChild(emptyLi);
+    } else {
+      const totalLine = document.createElement("li");
+      totalLine.style.fontWeight = "bold";
+      totalLine.textContent = `Total Amount: ₹${totalAmount}`;
+      cartList.appendChild(totalLine);
+    }
 
     // Update WhatsApp button
     const whatsappBtn = document.getElementById("whatsapp-link");
-    const message = Object.entries(cart).map(([name, data]) => {
-      const { quantity, price } = data;
-      return `${name} x${quantity} = ₹${quantity * price}`;
-    }).join('%0A') + `%0A%0ATotal: ₹${totalAmount}`;
+    if (Object.keys(cart).length === 0) {
+      whatsappBtn.href = "#";
+      whatsappBtn.style.pointerEvents = "none";
+      whatsappBtn.style.opacity = "0.6";
+    } else {
+      whatsappBtn.style.pointerEvents = "auto";
+      whatsappBtn.style.opacity = "1";
+      const message = Object.entries(cart).map(([name, data]) => {
+        const { quantity, price } = data;
+        return `${name} x${quantity} = ₹${quantity * price}`;
+      }).join('%0A') + `%0A%0ATotal: ₹${totalAmount}`;
 
-    whatsappBtn.href = "https://wa.me/918107419569?text=Hello%2C%20I%20want%20to%20order:%0A" + message;
+      whatsappBtn.href = "https://wa.me/918107419569?text=Hello%2C%20I%20want%20to%20order:%0A" + message;
+    }
+  }
+
+  // Close modal when clicking outside modal content
+  window.onclick = function(event) {
+    const modal = document.getElementById('sizeModal');
+    if (event.target === modal) {
+      closeSizeModal();
+    }
   }
 </script>
 </body>
 </html>
+    .brand-header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .logo {
+      width: 80px;
+      height: auto;
+    }
+
+    .brand-text h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    .brand-text p {
+      margin: 4px 0 0;
+      font-size: 16px;
+      color: #5a3c2e;
+    }
